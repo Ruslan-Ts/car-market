@@ -101,7 +101,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 /* ----------------Loader CSS--------------- */
-.LoaderWr {
+.LoaderWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -114,7 +114,6 @@ export const GlobalStyles = createGlobalStyle`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* z-index: 12000000000000; */
 }
 
 /* ---------------- Input arrow -------------- */

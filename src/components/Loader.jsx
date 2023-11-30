@@ -1,17 +1,20 @@
 import { createPortal } from 'react-dom';
-import { RotatingLines } from 'react-loader-spinner';
+import { ThreeDots } from 'react-loader-spinner';
 
 const loader = document.querySelector('#loader-root');
 
 const Loader = () => {
   return createPortal(
-    <div className="LoaderWr">
+    <div className="LoaderWrapper">
       <div className="LoaderWrCon">
-        <RotatingLines
-          strokeColor="#3470FF"
-          strokeWidth="5"
-          animationDuration="0.75"
-          width="96"
+        <ThreeDots
+          height="120"
+          width="120"
+          radius="11"
+          color="#3470FF"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
           visible={true}
         />
       </div>
