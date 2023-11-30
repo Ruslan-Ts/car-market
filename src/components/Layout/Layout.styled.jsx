@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const NavContainer = styled.nav`
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  gap: 50px;
   padding: 40px;
 `;
 
@@ -26,9 +27,9 @@ export const StyledLink = styled(NavLink)`
   min-width: 180px;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  &:active,
   &:hover,
-  /* &:focus, */
-  &:active {
+  &:focus {
     background-color: #0b44cd;
     box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, 0.2);
     border-top-left-radius: 50px;
