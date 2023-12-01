@@ -8,6 +8,7 @@ import {
   selectPage,
 } from 'redux/selectors';
 import Loader from '../../components/Loader';
+import CarItem from 'components/CarsItem/CarItem';
 
 const Cars = () => {
   const dispatch = useDispatch();
@@ -18,16 +19,18 @@ const Cars = () => {
 
   useEffect(() => {
     dispatch(fetchCars(page));
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   console.log(cars);
+
   return (
     <>
       {isLoading && !error && <Loader />}
+      {error && <p>{error.message}</p>}
       <ul>
         {cars.map(car => (
           <li key={car.id}>
-            <div>{car.make}</div>
+            <CarItem car={car} />
           </li>
         ))}
       </ul>
