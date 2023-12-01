@@ -11,7 +11,7 @@ const Layout = () => {
         <header>
           <NavContainer>
             <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/cars">All Cars</StyledLink>
+            <StyledLink to="/catalog">All Cars</StyledLink>
             <StyledLink to="/favorites">Favorites</StyledLink>
           </NavContainer>
         </header>

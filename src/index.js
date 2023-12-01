@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
 
 import './index.css';
-// import { Provider } from 'react-redux';
-// import { store, persistor } from './redux/store';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/store';
 // import { PersistGate } from 'redux-persist/integration/react';
 import { GlobalStyles } from './CommonStyle/CommonStyles.jsx';
 // import Loader from 'components/Loader';
@@ -13,12 +13,12 @@ import { GlobalStyles } from './CommonStyle/CommonStyles.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <GlobalStyles />
-    {/* <Provider store={store}> */}
-    {/* <PersistGate loading={<Loader />} persistor={persistor}> */}
-    <BrowserRouter basename="/car-market">
-      <App />
-    </BrowserRouter>
-    {/* </PersistGate> */}
-    {/* </Provider> */}
+    <Provider store={store}>
+      {/* <PersistGate loading={<Loader />} persistor={persistor}> */}
+      <BrowserRouter basename="/car-market">
+        <App />
+      </BrowserRouter>
+      {/* </PersistGate> */}
+    </Provider>
   </>
 );
