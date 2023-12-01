@@ -6,8 +6,11 @@ const carsSlice = createSlice({
 
   initialState: {
     items: [],
+    favorites: [],
     isLoading: false,
     error: null,
+    page: 1,
+    pageLimit: 12,
   },
 
   extraReducers: builder => {
