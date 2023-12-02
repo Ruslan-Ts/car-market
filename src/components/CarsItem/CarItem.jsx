@@ -7,18 +7,21 @@ const CarItem = ({ car }) => {
     rentalPrise,
     address,
     rentalCompany,
-    engineSize,
     type,
     mileage,
     functionalities,
-    accessories,
-    fuelConsumption,
   } = car;
 
-  console.log(car.id);
   return (
     <div>
-      <img src={img} alt={make} />
+      <img
+        src={
+          img
+            ? img
+            : 'https://hagerty-pagebuilder.imgix.net/6hYowaOttDoLKt9f0lHVCb/8afbed915e0b224f6140abe55283b9de/1929-Ford_Woodie_Wagon-WID-JLewis-0004.jpg?ixlib=js-3.5.1&max-w=640&auto=format%2Ccompress&w=1280&s=04990f0e82e05b7705f72ea770f4ab5d'
+        }
+        alt={make}
+      />
       <ul>
         <li>
           <div>{make}</div>

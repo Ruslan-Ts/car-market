@@ -31,8 +31,10 @@ export const StyledLink = styled(NavLink)`
   &:focus {
     background-color: #0b44cd;
     box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, 0.2);
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
   }
   &:active {
     color: black;

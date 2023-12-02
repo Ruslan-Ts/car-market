@@ -9,6 +9,8 @@ import {
 } from 'redux/selectors';
 import Loader from '../../components/Loader';
 import CarItem from 'components/CarsItem/CarItem';
+import Filter from 'components/Filter/Filter';
+import { List } from './Cars.styled';
 
 const Cars = () => {
   const dispatch = useDispatch();
@@ -21,19 +23,18 @@ const Cars = () => {
     dispatch(fetchCars(page));
   }, [dispatch, page]);
 
-  console.log(cars);
-
   return (
     <>
       {isLoading && !error && <Loader />}
       {error && <p>{error.message}</p>}
-      <ul>
+      <Filter />
+      <List>
         {cars.map(car => (
           <li key={car.id}>
             <CarItem car={car} />
           </li>
         ))}
-      </ul>
+      </List>
     </>
   );
 };

@@ -5,10 +5,8 @@ export const GlobalStyles = createGlobalStyle`
 	scroll-behavior: smooth;
 	}
 	body {
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", 
-			"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-			"Helvetica Neue", sans-serif;
-
+	    font-family: Manrope;
+    font-style: normal;
 		min-height: 100vh;
 		font-size: 16px;
 		font-style: normal;
