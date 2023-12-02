@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: 16px;
 		font-style: normal;
 		background-color: white;
-		color: #3470FF;
 	}
 
 	h1,
@@ -63,7 +62,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 	@media screen and (min-width: 1440px) {
 		[class="container"], [class$="main-container"] {
-			width: 1440px;
+			width: 1210px;
 			padding: 0 112px;
 		}
 			}

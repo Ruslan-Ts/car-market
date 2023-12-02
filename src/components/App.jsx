@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="catalog" element={<Cars />} />
         <Route path="favorites" element={<Favorites />} />
       </Route>
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<Layout />} />
     </Routes>
   );
 };

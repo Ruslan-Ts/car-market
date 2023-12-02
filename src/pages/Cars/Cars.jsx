@@ -24,7 +24,7 @@ const Cars = () => {
   }, [dispatch, page]);
 
   return (
-    <>
+    <div className="container">
       {isLoading && !error && <Loader />}
       {error && <p>{error.message}</p>}
       <Filter />
@@ -35,7 +35,8 @@ const Cars = () => {
           </li>
         ))}
       </List>
-    </>
+      <button type="button">Load more</button>
+    </div>
   );
 };
 

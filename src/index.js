@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <GlobalStyles />
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-      <BrowserRouter basename="/car-market">
+      <BrowserRouter basename="/carforrent">
         <App />
       </BrowserRouter>
       {/* </PersistGate> */}

@@ -61,7 +61,6 @@ const Home = () => {
 
         <Footer>
           <p>Follow Us on Social Media for the Latest Updates and Promotions</p>
-          {/* Add social media icons or links here */}
         </Footer>
       </div>
     </>
