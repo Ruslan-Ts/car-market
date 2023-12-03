@@ -1,22 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCars, selectStatusFilter } from 'redux/selectors';
-import { Button, Container } from './Filter.styled';
+import { Button, Container, Input, Label } from './Filter.styled';
 
 const Filter = () => {
   const cars = useSelector(selectCars);
   const dispatch = useDispatch();
   const filter = useSelector(selectStatusFilter);
 
+  const onFilter = e => {
+    dispatch(selectStatusFilter(e.target.value));
+  };
+
   return (
     <Container>
       <form>
-        <label for="fav">Car brand</label>
-        <div>
-          <input
+        <Label for="fav">Car brand</Label>
+        <Container>
+          <Input
             placeholder="Enter the text"
             list="cars"
             name="cars"
             id="fav"
+            value={filter}
+            onChange={onFilter}
           />
 
           <datalist id="cars">
@@ -25,7 +31,7 @@ const Filter = () => {
             ))}
           </datalist>
           <Button type="submit">Search</Button>
-        </div>
+        </Container>
       </form>
     </Container>
   );

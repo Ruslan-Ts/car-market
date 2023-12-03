@@ -4,7 +4,6 @@ import { fetchCars } from 'redux/operations';
 import {
   selectCars,
   selectError,
-  selectFavorites,
   selectIsLoading,
   selectPageLimit,
 } from 'redux/selectors';

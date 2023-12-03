@@ -2,16 +2,9 @@ const { createSlice } = require('@reduxjs/toolkit');
 
 export const filtersSlice = createSlice({
   name: 'filters',
-  initialState: {
-    model: '',
-    rentalPrice: null,
-    mileageFrom: null,
-    mileageTo: null,
-  },
+  initialState: '',
   reducers: {
-    setStatusFilter(state, action) {
-      state.status = action.payload;
-    },
+    setStatusFilter: (_, { payload }) => payload,
   },
 });
 

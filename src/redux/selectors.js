@@ -7,11 +7,13 @@ export const selectPageLimit = state => state.cars.pageLimit;
 export const selectIsLoading = state => state.cars.isLoading;
 export const selectError = state => state.cars.error;
 
-export const selectStatusFilter = state => state.filters.status;
+export const selectStatusFilter = state => state.filters;
 
 export const selectVisibleCars = createSelector(
   [selectCars, selectStatusFilter],
-  (cars, filter) => {
-    return cars.filter(car => car.includes(filter));
+  (items, filters) => {
+    return items.filter(({ model }) =>
+      model.toLowerCase().includes(filters.toLowerCase())
+    );
   }
 );

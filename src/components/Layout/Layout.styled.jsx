@@ -6,6 +6,10 @@ export const NavContainer = styled.nav`
   justify-content: center;
   gap: 50px;
   padding: 40px;
+  @media screen and (max-width: 467px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -33,6 +37,9 @@ export const StyledLink = styled(NavLink)`
   }
   &:active {
     color: black;
+  }
+  @media screen and (max-width: 767px) {
+    min-width: 80px;
   }
 `;
 

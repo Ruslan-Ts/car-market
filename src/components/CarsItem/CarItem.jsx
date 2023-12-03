@@ -11,6 +11,9 @@ import sprite from '../../img/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from 'redux/selectors';
 import { addToFavorites, delFromFavorites } from 'redux/carsSlice';
+import LearnMoreModal from 'components/LearnMoreModal/LearnMoreModal';
+import { useContext } from 'react';
+import { ModalContext } from 'components/ModalContext';
 
 const CarItem = ({ car }) => {
   const {
@@ -35,6 +38,10 @@ const CarItem = ({ car }) => {
     } else {
       dispatch(delFromFavorites(car));
     }
+  };
+  const onClose = useContext(ModalContext);
+  const handleOpenModal = () => {
+    onClose(<LearnMoreModal car={car} />);
   };
 
   return (
@@ -84,7 +91,7 @@ const CarItem = ({ car }) => {
           <li>&nbsp;{mileage / 1000}&nbsp;|</li>
           <li>&nbsp;{functionalities[0]}</li>
         </CharContainer>
-        <Button>Learn more</Button>
+        <Button onClick={handleOpenModal}>Learn more</Button>
       </Container>
     </div>
   );

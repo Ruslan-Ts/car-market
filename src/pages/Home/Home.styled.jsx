@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Header = styled.header`
   text-align: center;
   padding: 20px;
-  background-color: #0b44cd;
+  background-color: #3470ff;
   color: #fff;
 `;
 
