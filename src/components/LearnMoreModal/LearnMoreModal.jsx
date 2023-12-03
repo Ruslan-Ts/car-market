@@ -13,7 +13,6 @@ import {
   Title,
   TitleContainer,
 } from './LearnMoreModal.styled';
-import sprite from '../../img/sprite.svg';
 
 const LearnMoreModal = ({ car }) => {
   const {

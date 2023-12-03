@@ -26,7 +26,7 @@ const Cars = () => {
 
   useEffect(() => {
     dispatch(resetPage());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container">
