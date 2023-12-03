@@ -6,9 +6,9 @@ axios.defaults.baseURL =
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchAll',
-  async (page, thunkAPI) => {
+  async (pageLimit, thunkAPI) => {
     try {
-      const { data } = await axios.get(`/car?page=${page}&limit=12`);
+      const { data } = await axios.get(`/car?page=1&limit=${pageLimit}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

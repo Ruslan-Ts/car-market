@@ -60,7 +60,7 @@ export const GlobalStyles = createGlobalStyle`
 			padding: 0 32px;
 		}
 	}
-	@media screen and (min-width: 1440px) {
+	@media screen and (min-width: 1220px) {
 		[class="container"], [class$="main-container"] {
 			width: 1210px;
 			padding: 0 112px;

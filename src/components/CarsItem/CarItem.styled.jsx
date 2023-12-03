@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 274px;
   gap: 50px;
+  margin-top: 30px;
 `;
 
 export const ImageContainer = styled.div`
@@ -28,6 +29,9 @@ export const TitleContainer = styled.ul`
   justify-content: space-between;
   margin-top: 14px;
   margin-bottom: 8px;
+  margin-right: 6px;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const CharContainer = styled.div`

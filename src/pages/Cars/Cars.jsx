@@ -6,22 +6,24 @@ import {
   selectError,
   selectIsLoading,
   selectPage,
+  selectPageLimit,
 } from 'redux/selectors';
 import Loader from '../../components/Loader';
 import CarItem from 'components/CarsItem/CarItem';
 import Filter from 'components/Filter/Filter';
 import { List } from './Cars.styled';
+import { nextPage } from 'redux/carsSlice';
 
 const Cars = () => {
   const dispatch = useDispatch();
   const cars = useSelector(selectCars);
-  const page = useSelector(selectPage);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const pageLimit = useSelector(selectPageLimit);
 
   useEffect(() => {
-    dispatch(fetchCars(page));
-  }, [dispatch, page]);
+    dispatch(fetchCars(pageLimit));
+  }, [dispatch, pageLimit]);
 
   return (
     <div className="container">
@@ -35,7 +37,9 @@ const Cars = () => {
           </li>
         ))}
       </List>
-      <button type="button">Load more</button>
+      {cars.length % pageLimit === 0 && (
+        <button onClick={() => dispatch(nextPage())}>Load more</button>
+      )}
     </div>
   );
 };

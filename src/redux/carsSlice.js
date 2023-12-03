@@ -9,10 +9,19 @@ const carsSlice = createSlice({
     favorites: [],
     isLoading: false,
     error: null,
-    page: 1,
     pageLimit: 12,
   },
-
+  reducers: {
+    nextPage: state => {
+      state.pageLimit += 12;
+    },
+    addToFavorites: (state, { payload }) => {
+      state.favorites.push(payload);
+    },
+    delFromFavorites: (state, { payload }) => {
+      state.favorites.filter(car => car.id !== payload.id);
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCars.fulfilled, (state, { payload }) => {
@@ -31,3 +40,4 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
+export const { nextPage, addToFavorites, delFromFavorites } = carsSlice.actions;
