@@ -10,6 +10,7 @@ export const ImageContainer = styled.div`
   width: 274px;
   height: 268px;
   border-radius: 12px;
+  position: relative;
 `;
 
 export const Image = styled.img`
@@ -46,7 +47,7 @@ export const CharContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 12px;
   background-color: #3470ff;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,4 +68,14 @@ export const Button = styled.button`
     background-color: #0b44cd;
     box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, 0.2);
   }
+`;
+
+export const FavBtn = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
 `;

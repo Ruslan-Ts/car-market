@@ -15,11 +15,15 @@ const carsSlice = createSlice({
     nextPage: state => {
       state.pageLimit += 12;
     },
+    resetPage: state => {
+      state.pageLimit = 12;
+    },
     addToFavorites: (state, { payload }) => {
       state.favorites.push(payload);
     },
     delFromFavorites: (state, { payload }) => {
-      state.favorites.filter(car => car.id !== payload.id);
+      const index = state.favorites.indexOf(payload);
+      state.favorites.splice(index, 1);
     },
   },
   extraReducers: builder => {
@@ -40,4 +44,5 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
-export const { nextPage, addToFavorites, delFromFavorites } = carsSlice.actions;
+export const { nextPage, addToFavorites, delFromFavorites, resetPage } =
+  carsSlice.actions;

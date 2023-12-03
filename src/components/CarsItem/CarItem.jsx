@@ -5,7 +5,12 @@ import {
   ImageContainer,
   TitleContainer,
   Button,
+  FavBtn,
 } from './CarItem.styled';
+import sprite from '../../img/sprite.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from 'redux/selectors';
+import { addToFavorites, delFromFavorites } from 'redux/carsSlice';
 
 const CarItem = ({ car }) => {
   const {
@@ -21,12 +26,32 @@ const CarItem = ({ car }) => {
     functionalities,
   } = car;
 
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+
+  const handleSetFavorite = car => {
+    if (!favorites.some(item => item.id === car.id)) {
+      dispatch(addToFavorites(car));
+    } else {
+      dispatch(delFromFavorites(car));
+    }
+  };
+
   return (
     <div>
       <Container>
         <ImageContainer
           style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
         >
+          <FavBtn type="button" onClick={() => handleSetFavorite(car)}>
+            <svg width="18" height="18">
+              {favorites.some(item => item.id === car.id) ? (
+                <use href={`${sprite}#icon-heartFilled`}></use>
+              ) : (
+                <use href={`${sprite}#icon-heartEmp`}></use>
+              )}
+            </svg>
+          </FavBtn>
           {!img ? (
             <Image
               src="https://hagerty-pagebuilder.imgix.net/6hYowaOttDoLKt9f0lHVCb/8afbed915e0b224f6140abe55283b9de/1929-Ford_Woodie_Wagon-WID-JLewis-0004.jpg?ixlib=js-3.5.1&max-w=640&auto=format%2Ccompress&w=1280&s=04990f0e82e05b7705f72ea770f4ab5d"

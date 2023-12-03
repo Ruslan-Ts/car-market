@@ -1,22 +1,33 @@
-import { useSelector } from 'react-redux';
-import { selectCars } from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCars, selectStatusFilter } from 'redux/selectors';
+import { Button, Container } from './Filter.styled';
 
 const Filter = () => {
   const cars = useSelector(selectCars);
+  const dispatch = useDispatch();
+  const filter = useSelector(selectStatusFilter);
+
   return (
-    <div>
+    <Container>
       <form>
         <label for="fav">Car brand</label>
-        <input list="browsers" name="fav" id="fav" />
+        <div>
+          <input
+            placeholder="Enter the text"
+            list="cars"
+            name="cars"
+            id="fav"
+          />
 
-        <datalist id="browsers">
-          {cars.map(car => (
-            <option>{car.make}</option>
-          ))}
-        </datalist>
-        <button type="submit">Search</button>
+          <datalist id="cars">
+            {cars.map(car => (
+              <option key={car.id}>{car.make}</option>
+            ))}
+          </datalist>
+          <Button type="submit">Search</Button>
+        </div>
       </form>
-    </div>
+    </Container>
   );
 };
 

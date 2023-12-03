@@ -4,15 +4,15 @@ import { fetchCars } from 'redux/operations';
 import {
   selectCars,
   selectError,
+  selectFavorites,
   selectIsLoading,
-  selectPage,
   selectPageLimit,
 } from 'redux/selectors';
 import Loader from '../../components/Loader';
 import CarItem from 'components/CarsItem/CarItem';
 import Filter from 'components/Filter/Filter';
-import { List } from './Cars.styled';
-import { nextPage } from 'redux/carsSlice';
+import { BtnWrapper, Button, List } from './Cars.styled';
+import { nextPage, resetPage } from 'redux/carsSlice';
 
 const Cars = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,10 @@ const Cars = () => {
   useEffect(() => {
     dispatch(fetchCars(pageLimit));
   }, [dispatch, pageLimit]);
+
+  useEffect(() => {
+    dispatch(resetPage());
+  }, []);
 
   return (
     <div className="container">
@@ -37,9 +41,11 @@ const Cars = () => {
           </li>
         ))}
       </List>
-      {cars.length % pageLimit === 0 && (
-        <button onClick={() => dispatch(nextPage())}>Load more</button>
-      )}
+      <BtnWrapper>
+        {cars.length % pageLimit === 0 && (
+          <Button onClick={() => dispatch(nextPage())}>Load more</Button>
+        )}
+      </BtnWrapper>
     </div>
   );
 };
