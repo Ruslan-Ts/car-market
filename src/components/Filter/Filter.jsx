@@ -25,7 +25,6 @@ const Filter = () => {
             value={filter}
             onChange={onFilter}
           />
-
           <datalist id="cars">
             {cars.map(car => (
               <option key={car.id}>{car.make}</option>
