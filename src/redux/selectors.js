@@ -12,8 +12,6 @@ export const selectStatusFilter = state => state.filters;
 export const selectVisibleCars = createSelector(
   [selectCars, selectStatusFilter],
   (items, filters) => {
-    return items.filter(({ model }) =>
-      model.toLowerCase().includes(filters.toLowerCase())
-    );
+    return items.filter(({ model }) => model.includes(filters));
   }
 );

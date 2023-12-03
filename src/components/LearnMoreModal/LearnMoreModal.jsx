@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { ModalContext } from 'components/ModalContext';
 import {
-  AccContainer,
   Button,
   ButtonClose,
   CharContainer,
@@ -9,10 +8,10 @@ import {
   Image,
   ImageContainer,
   ModalWrapper,
+  TextBox,
   TextContainer,
   Title,
   TitleContainer,
-  Wrapper,
 } from './LearnMoreModal.styled';
 import sprite from '../../img/sprite.svg';
 
@@ -30,6 +29,7 @@ const LearnMoreModal = ({ car }) => {
     functionalities,
     description,
     accessories,
+    rentalConditions,
   } = car;
 
   const toggleModal = useContext(ModalContext);
@@ -68,7 +68,6 @@ const LearnMoreModal = ({ car }) => {
           <span style={{ color: '#3470FF' }}>{model}&nbsp;</span>
           {year}
         </div>
-        <li>{rentalPrice}</li>
       </TitleContainer>
       <CharContainer>
         <li>{address.split(',')[1]}&nbsp;|</li>
@@ -95,7 +94,20 @@ const LearnMoreModal = ({ car }) => {
         <li>&nbsp;{functionalities[2]}</li>
       </CharContainer>
       <Title>Rental Conditions:</Title>
-      <Button>Rental car</Button>
+      <CharContainer>
+        <TextBox>{rentalConditions.split('/')[0]}</TextBox>
+        <TextBox>{rentalConditions.split('/')[1]}</TextBox>
+      </CharContainer>
+      <CharContainer>
+        <TextBox>{rentalConditions.split('/')[2]}</TextBox>
+        <TextBox>
+          Mileage:&nbsp;<span style={{ color: '#3470FF' }}>{mileage}</span>
+        </TextBox>
+        <TextBox>
+          Price:&nbsp;<span style={{ color: '#3470FF' }}>{rentalPrice}</span>
+        </TextBox>
+      </CharContainer>
+      <Button href="tel:+380730000000">Rental car</Button>
     </ModalWrapper>
   );
 };

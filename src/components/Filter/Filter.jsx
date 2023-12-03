@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCars, selectStatusFilter } from 'redux/selectors';
 import { Button, Container, Input, Label } from './Filter.styled';
+import { setStatusFilter } from 'redux/filterSlice';
 
 const Filter = () => {
   const cars = useSelector(selectCars);
@@ -8,7 +9,7 @@ const Filter = () => {
   const filter = useSelector(selectStatusFilter);
 
   const onFilter = e => {
-    dispatch(selectStatusFilter(e.target.value));
+    dispatch(setStatusFilter(e.target.value));
   };
 
   return (

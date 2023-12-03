@@ -30,20 +30,21 @@ export const ButtonClose = styled.button`
   fill: black;
   right: 0;
   top: 0;
-  /* background-color: black; */
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999999;
 `;
 
 export const HoverCloseBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: black;
   padding: 4px;
-  border-radius: 100%;
   transition: background-color #3470ff;
+  z-index: 99999999;
   &:hover {
     background-color: #0b44cd;
   }
@@ -70,7 +71,6 @@ export const Image = styled.img`
 
 export const TitleContainer = styled.ul`
   display: flex;
-  justify-content: space-between;
   margin-top: 14px;
   margin-bottom: 8px;
   margin-right: 6px;
@@ -119,19 +119,33 @@ export const TextContainer = styled.div`
 
 export const Title = styled.h2`
   margin-bottom: 8px;
+  margin-top: 24px;
+  color: #121417;
   font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
   line-height: 20px;
+`;
+
+export const TextBox = styled.h2`
+  padding: 7px 14px;
+  border-radius: 35px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  line-height: 18px;
   font-style: normal;
   font-weight: 400;
   color: #121417;
 `;
-
-export const Button = styled.button`
+export const Button = styled.a`
   padding: 8px 12px;
   border-radius: 12px;
   background-color: #3470ff;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   border: 0;
   width: 168px;
