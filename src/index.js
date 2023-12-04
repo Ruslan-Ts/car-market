@@ -11,11 +11,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <GlobalStyles />
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/car-market">
-          <App />
-        </BrowserRouter>
-      </PersistGate>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <BrowserRouter basename="/car-market">
+        <App />
+      </BrowserRouter>
+      {/* </PersistGate> */}
     </Provider>
   </>
 );
