@@ -9,7 +9,7 @@ import { resetPage } from 'redux/carsSlice';
 const Layout = () => {
   const dispatch = useDispatch();
   return (
-    <body>
+    <div>
       <PageBox>
         <header>
           <NavContainer>
@@ -25,7 +25,7 @@ const Layout = () => {
           <Outlet />
         </Suspense>
       </PageBox>
-    </body>
+    </div>
   );
 };
 

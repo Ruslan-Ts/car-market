@@ -77,7 +77,7 @@ const CarItem = ({ car }) => {
             <span style={{ color: '#3470FF' }}>{model}&nbsp;</span>
             {year}
           </div>
-          <li>{rentalPrice}</li>
+          <div>{rentalPrice}</div>
         </TitleContainer>
         <CharContainer>
           <li>{address.split(',')[1]}&nbsp;|</li>

@@ -15,7 +15,7 @@ const Filter = () => {
   return (
     <Container>
       <form>
-        <Label for="fav">Car brand</Label>
+        <Label htmlFor="fav">Car brand</Label>
         <Container>
           <Input
             placeholder="Enter the text"

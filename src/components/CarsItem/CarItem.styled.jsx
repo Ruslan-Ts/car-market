@@ -25,7 +25,7 @@ export const Image = styled.img`
   }
 `;
 
-export const TitleContainer = styled.ul`
+export const TitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 14px;
@@ -35,7 +35,7 @@ export const TitleContainer = styled.ul`
   overflow: hidden;
 `;
 
-export const CharContainer = styled.div`
+export const CharContainer = styled.ul`
   display: flex;
   margin-top: 4px;
   font-size: 12px;
