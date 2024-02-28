@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/car-market/static/js/main.84f14071.js",
-    "static/js/747.06c25755.chunk.js": "/car-market/static/js/747.06c25755.chunk.js",
+    "main.js": "/car-market/static/js/main.99289920.js",
+    "static/js/747.5572caa9.chunk.js": "/car-market/static/js/747.5572caa9.chunk.js",
     "static/js/485.8cc8f3f3.chunk.js": "/car-market/static/js/485.8cc8f3f3.chunk.js",
     "static/js/213.8b2efcd8.chunk.js": "/car-market/static/js/213.8b2efcd8.chunk.js",
     "static/js/733.504e2a4b.chunk.js": "/car-market/static/js/733.504e2a4b.chunk.js",
@@ -9,8 +9,8 @@
     "static/js/43.54abef7d.chunk.js": "/car-market/static/js/43.54abef7d.chunk.js",
     "static/media/sprite.svg": "/car-market/static/media/sprite.3ac3bcde7bc0f22d6bff23f2fa980441.svg",
     "index.html": "/car-market/index.html",
-    "main.84f14071.js.map": "/car-market/static/js/main.84f14071.js.map",
-    "747.06c25755.chunk.js.map": "/car-market/static/js/747.06c25755.chunk.js.map",
+    "main.99289920.js.map": "/car-market/static/js/main.99289920.js.map",
+    "747.5572caa9.chunk.js.map": "/car-market/static/js/747.5572caa9.chunk.js.map",
     "485.8cc8f3f3.chunk.js.map": "/car-market/static/js/485.8cc8f3f3.chunk.js.map",
     "213.8b2efcd8.chunk.js.map": "/car-market/static/js/213.8b2efcd8.chunk.js.map",
     "733.504e2a4b.chunk.js.map": "/car-market/static/js/733.504e2a4b.chunk.js.map",
@@ -18,6 +18,6 @@
     "43.54abef7d.chunk.js.map": "/car-market/static/js/43.54abef7d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.84f14071.js"
+    "static/js/main.99289920.js"
   ]
 }
