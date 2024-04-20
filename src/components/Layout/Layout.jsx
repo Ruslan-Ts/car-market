@@ -9,23 +9,20 @@ import { resetPage } from 'redux/carsSlice';
 const Layout = () => {
   const dispatch = useDispatch();
   return (
-    <>
-      <PageBox>
-        <header>
-          <NavContainer>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink onClick={() => dispatch(resetPage())} to="/catalog">
-              All Cars
-            </StyledLink>
-            <StyledLink to="/favorites">Favorites</StyledLink>
-          </NavContainer>
-        </header>
-
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </PageBox>
-    </>
+    <PageBox>
+      <header>
+        <NavContainer>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink onClick={() => dispatch(resetPage())} to="/catalog">
+            All Cars
+          </StyledLink>
+          <StyledLink to="/favorites">Favorites</StyledLink>
+        </NavContainer>
+      </header>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </PageBox>
   );
 };
 
